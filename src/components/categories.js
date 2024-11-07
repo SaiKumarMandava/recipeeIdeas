@@ -46,42 +46,34 @@ export default function Categories() {
   console.log(data);
   return (
     <div>
-      
-
       <div className="px-4 mb-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-6">
-        
-        
-      <div className="w-full flex flex-col lg:flex-row lg:justify-between  py-6">
-        <p
-          aria-label="Category"
-          title="Visit the East"
-          className="inline-block py-3 text-xl font-satoshi font-bold text-gray-700 leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700"
-        >
-          Categories
-        </p>
+        <div className="w-full flex flex-col lg:flex-row lg:justify-between  py-6">
+          <p
+            aria-label="Category"
+            title="Visit the East"
+            className="inline-block py-3 text-xl font-satoshi font-bold text-gray-700 leading-5 transition-colors duration-200 hover:text-deep-purple-accent-700"
+          >
+            Categories
+          </p>
 
-        <div>
-          <input
-            type="Search"
-            placeholder="Search by Category, eg:Beef"
-            value={searchTerm}
-            onChange={hanleSearch}
-            // style={{
-            //   width: "100%",
-            //   width: "400px",
-            //   padding: "10px",
-            //   outline: "none",
-            //   borderRadius: "5px 5px 5px 5px",
-            // }}
-            className=" w-full p-4 lg:w-[400px] rounded-md outline-none  bg-gray-200"
-          />
+          <div>
+            <input
+              type="Search"
+              placeholder="Search by Category, eg:Beef"
+              value={searchTerm}
+              onChange={hanleSearch}
+              // style={{
+              //   width: "100%",
+              //   width: "400px",
+              //   padding: "10px",
+              //   outline: "none",
+              //   borderRadius: "5px 5px 5px 5px",
+              // }}
+              className=" w-full p-4 lg:w-[400px] rounded-md outline-none  bg-gray-200"
+            />
+          </div>
         </div>
-      </div>
-        
-        
-        
-        
-        
+
         <div className="grid gap-8  lg:grid-cols-3 w-full sm:mx-auto lg:max-w-full">
           {filteredCategory && filteredCategory?.length > 0 ? (
             filteredCategory.map((item, index) => (
@@ -104,16 +96,10 @@ export default function Categories() {
                   </p>
 
                   <p className="mb-2 text-gray-600 truncate font-satoshi font-normal">
-                  {item?.strCategoryDescription || "Description Not Available"} 
-
+                    {item?.strCategoryDescription ||
+                      "Description Not Available"}
                   </p>
-                  {/* <Link
-                    to={`/individualCategory/${item?.strCategory}`}
-                    aria-label=""
-                    className="inline-flex font-satoshi items-center font-semibold text-red-500 transition-colors duration-200  hover:text-deep-purple-800"
-                  >
-                    Learn more
-                  </Link> */}
+
                   <Link
                     to={`/individualCategoryDetails/${item?.idCategory}`}
                     aria-label=""
