@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import Loader from '../shared/loader'
 
 function IndividualCategory() {
   const { strCategory } = useParams();
@@ -39,7 +40,10 @@ function IndividualCategory() {
   };
 
   console.log(data);
-  if (loading) return <p>loading......</p>;
+
+
+  if (loading) return <Loader/>;
+
 
   return (
     <div>

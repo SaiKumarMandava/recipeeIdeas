@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Loader from '../shared/loader'
 
 export default function Healthy() {
   const strCategory = "Vegetarian";
@@ -37,7 +38,10 @@ export default function Healthy() {
   };
 
   console.log(data);
-  if (loading) return <p>loading......</p>;
+
+
+  if (loading) return <Loader/>;
+
   return (
     <div>
       <div className="px-4 mb-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-6">

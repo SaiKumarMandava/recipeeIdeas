@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import Loader from '../shared/loader'
 
 function IndividualRecipess() {
   const { idMeal } = useParams();
@@ -28,7 +29,8 @@ function IndividualRecipess() {
   }, [idMeal]);
 
   console.log(data);
-  if (loading) return <p>loading......</p>;
+  if (loading) return <Loader/>;
+
 
   return (
     <div>

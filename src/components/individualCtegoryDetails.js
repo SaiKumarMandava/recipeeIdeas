@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import KitchenImage from "../components/assets/ss.webp";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import Loader from '../shared/loader'
 
 export default function IndividualCategory() {
   const [data, setData] = useState();
@@ -37,7 +38,9 @@ export default function IndividualCategory() {
 
   console.log(data);
 
-  if (loading) return <p>loading......</p>;
+  if (loading) return <Loader/>;
+
+
 
   return (
     <div className="lg:mt-[-85px] lg:ml-20 py-5 flex justify-center items-center">

@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Loader from '../shared/loader'
 export default function Categories() {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
@@ -41,7 +42,7 @@ export default function Categories() {
     setSearchTerm(e.target.value);
   };
 
-  if (loading) return <p>loading......</p>;
+  if (loading) return <Loader/>;
 
   console.log(data);
   return (

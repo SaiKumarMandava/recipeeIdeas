@@ -1,17 +1,21 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import { Suspense,lazy } from 'react';
+
 import { Routes,Route } from 'react-router-dom';
 import NavBar from './global/nav';
 import Footer from './global/foter';
 import Header from './global/header';
-import Categories from './components/categories';
-import IndividualCategory from './components/individualCategory';
-import IndividualRecipess from './components/individualRecipess';
-import IndividualCategoryDetails from './components/individualCtegoryDetails';
-import Healthy from './components/healthy';
-import Comfort from './components/comfort';
-import Adventurous from './components/adventurous';
+
 import ScrollToTop from "react-scroll-to-top";
+
+const Categories = lazy(() => import('./components/categories'));
+const IndividualCategory = lazy(() => import('./components/individualCategory'));
+const IndividualRecipess = lazy(() => import('./components/individualRecipess'));
+const IndividualCategoryDetails = lazy(() => import('./components/individualCtegoryDetails'));
+const Healthy = lazy(() => import('./components/healthy'));
+const Comfort = lazy(() => import('./components/comfort'));
+const Adventurous = lazy(() => import('./components/adventurous'));
 
 function App() {
 
@@ -19,6 +23,7 @@ function App() {
     <div>
       <NavBar/>
      {/* <Categories/> */}
+     {/* <Suspense fallback={<div>Loading...</div>}> */}
      <ScrollToTop smooth color="#6f00ff" 
      className='animate-bounce'
      style={{
@@ -35,38 +40,38 @@ function App() {
       />
       <Route 
        exact path='/categories'
-       element={<Categories/>}
+       element={<Suspense  fallback={<div>Loading...</div>}><Categories/></Suspense>}
       />
         <Route 
        exact path='/individualCategory/:strCategory'
-       element={<IndividualCategory/>}
+       element={<Suspense  fallback={<div>Loading...</div>}><IndividualCategory/></Suspense>}
       />
 
 <Route 
        exact path='/individualCategoryDetails/:idCategory'
-       element={<IndividualCategoryDetails/>}
+       element={<Suspense  fallback={<div>Loading...</div>}><IndividualCategoryDetails/></Suspense>}
       />
         <Route 
        exact path='/individualRecipe/:idMeal'
-       element={<IndividualRecipess/>}
+       element={<Suspense  fallback={<div>Loading...</div>}><IndividualRecipess/></Suspense>}
       />
         <Route 
        exact path='/healthy'
-       element={<Healthy/>}
+       element={<Suspense  fallback={<div>Loading...</div>}><Healthy/></Suspense>}
       />
         <Route 
        exact path='/comfort'
-       element={<Comfort/>}
+       element={<Suspense  fallback={<div>Loading...</div>}><Comfort/></Suspense>}
       />
        <Route 
        exact path='/adventurous'
-       element={<Adventurous/>}
+       element={<Suspense  fallback={<div>Loading...</div>}><Adventurous/></Suspense>}
       />
 
 
       
      </Routes>
-     
+     {/* </Suspense> */}
      <Footer/>
     </div>
   );

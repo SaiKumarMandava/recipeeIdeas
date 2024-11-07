@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Loader from '../shared/loader'
 
 export default function Adventurous() {
   const strCategory = "Beef";
@@ -40,7 +41,8 @@ export default function Adventurous() {
 
   console.log(data);
 
-  if (loading) return <p>loading......</p>;
+  if (loading) return <Loader/>;
+
 
   return (
     <div>
