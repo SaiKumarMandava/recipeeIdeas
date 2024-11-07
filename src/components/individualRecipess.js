@@ -154,7 +154,7 @@ function IndividualRecipess() {
               Instructions
             </summary>
             <p className="text-base py-4 text-gray-600 md:text-lg  font-satoshi font-normal">
-              {data[0].strInstructions}
+              {data[0].strInstructions || "Instructions Not Available"}
             </p>
           </details>
         </div>
