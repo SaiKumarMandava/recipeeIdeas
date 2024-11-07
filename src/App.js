@@ -7,6 +7,7 @@ import Header from './global/header';
 import Categories from './components/categories';
 import IndividualCategory from './components/individualCategory';
 import IndividualRecipess from './components/individualRecipess';
+import IndividualCategoryDetails from './components/individualCtegoryDetails';
 import Healthy from './components/healthy';
 import Comfort from './components/comfort';
 import Adventurous from './components/adventurous';
@@ -39,6 +40,11 @@ function App() {
         <Route 
        exact path='/individualCategory/:strCategory'
        element={<IndividualCategory/>}
+      />
+
+<Route 
+       exact path='/individualCategoryDetails/:idCategory'
+       element={<IndividualCategoryDetails/>}
       />
         <Route 
        exact path='/individualRecipe/:idMeal'

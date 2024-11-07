@@ -106,14 +106,16 @@ filteredHealthyCategory?.map((item,index)=>(
     
      
       <p className="mb-2 text-gray-600 truncate font-satoshi font-normal">
-      {item?.strCategoryDescription}
+      {item?.strCategoryDescription || "Description Not Available"} 
       </p>
       <Link
         to={`/individualRecipe/${item?.idMeal}`}
         aria-label=""
-        className="inline-flex font-satoshi items-center font-semibold text-red-500 transition-colors duration-200  hover:text-deep-purple-800"
+        className="flex justify-center items-center py-3 mt-5 border-2 rounded-md font-satoshi items-cent 
+                     font-semibold text-red-500 transition-colors duration-200  
+                     hover:text-red-400"
       >
-        Learn more
+       Start Cookig
       </Link>
     </div>
     </div>
