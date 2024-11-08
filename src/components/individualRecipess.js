@@ -24,7 +24,7 @@ function IndividualRecipess() {
         setLoading(false);
       }
     };
-
+    window.scrollTo(0, 0);
     fetchData();
   }, [idMeal]);
 

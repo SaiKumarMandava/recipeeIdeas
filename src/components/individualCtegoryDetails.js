@@ -32,7 +32,7 @@ export default function IndividualCategory() {
         setLoading(false);
       }
     };
-
+    window.scrollTo(0, 0);
     fetchData();
   }, [idCategory]);
 
@@ -43,9 +43,14 @@ export default function IndividualCategory() {
 
 
   return (
-    <div className="lg:mt-[-85px] lg:ml-20 py-5 flex justify-center items-center">
+    <div className="lg:mt-[-85px] lg:ml-20 py-5 flex justify-center items-center"
+   
+    >
       {data ? (
-        <div className="relative flex mx-auto flex-col lg:flex-row py-6 lg:pt-0 lg:pb-0">
+        <div className="relative flex mx-auto flex-col lg:flex-row py-6 lg:pt-0 lg:pb-0 "
+        
+        key={idCategory}
+        >
           <div className="w-full px-4 mx-auto lg:px-0">
             <img
               className="object-cover lg:mt-40 w-full h-56 rounded shadow-lg lg:rounded-md lg:shadow-none sm:h-96 lg:h-96"

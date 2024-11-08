@@ -23,6 +23,7 @@ export default function Healthy() {
         setLoading(false);
       }
     };
+    window.scrollTo(0, 0);
 
     fetchData();
   }, [strCategory]);

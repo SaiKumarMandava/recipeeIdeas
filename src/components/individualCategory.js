@@ -23,7 +23,7 @@ function IndividualCategory() {
         setLoading(false);
       }
     };
-
+    window.scrollTo(0, 0);
     fetchData();
   }, [strCategory]);
 
